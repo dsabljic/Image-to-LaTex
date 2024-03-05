@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image to LaTex</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Handwritten Formula Recognition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    
+    <p class="text-4xl text-center m-3">Handwritten Formula Recognition to LaTeX</p>
+    <div class="text-center">
+        <canvas class="border border-black mx-auto" id="inputCanvas" width="700" height="320"></canvas>
+        <br>
+        <button class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded m-2" id="predictBtn">Predict</button>
+        <button class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded m-2" id="clearBtn">Clear</button>
+        <div id="prediction" class="mt-4 text-lg"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
