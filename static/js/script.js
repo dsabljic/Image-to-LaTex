@@ -7,7 +7,7 @@ const predictionDiv = document.getElementById("prediction");
 function initCanvas() {
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.lineWidth = 7;
+    ctx.lineWidth = 5;
     ctx.lineCap = "round";
     ctx.strokeStyle = "black";
 }
@@ -33,7 +33,8 @@ canvas.addEventListener("mouseup", () => isDrawing = false);
 canvas.addEventListener("mouseout", () => isDrawing = false);
 
 clearButton.addEventListener("click", () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+   ctx.clearRect(0, 0, canvas.width, canvas.height);
+    predictionDiv.textContent = '';
     initCanvas();
 });
 
@@ -48,7 +49,7 @@ predictButton.addEventListener("click", function() {
         })
         .then(response => response.json())
         .then(data => {
-            predictionDiv.textContent = `LaTeX: ${data.latex}`;
+            predictionDiv.innerHTML = `LaTeX: <code>${data.latex}</code>`;
         })
         .catch(error => {
             console.error('Error:', error);
