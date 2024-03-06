@@ -42,13 +42,13 @@ predictButton.addEventListener("click", function() {
         const formData = new FormData();
         formData.append("image", blob);
 
-        fetch("/predict_formula", {
+        fetch("/predict", {
             method: "POST",
             body: formData,
         })
         .then(response => response.json())
         .then(data => {
-            predictionDiv.textContent = `Predicted LaTeX: ${data.latex}`;
+            predictionDiv.textContent = `LaTeX: ${data.latex}`;
         })
         .catch(error => {
             console.error('Error:', error);
