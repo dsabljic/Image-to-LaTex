@@ -10,11 +10,10 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 async def read_index():
     return FileResponse('template/index.html')
 
+# demo
 @app.post("/predict")
 async def predict_formula(image: UploadFile = File(...)):
-    # Dummy function to 'process' the image
-    # In a real scenario, you would add image processing logic here
-
-    # Return a generic LaTeX formula for demonstration purposes
+    # Image processing
+    
     generic_latex = "E=mc^2"
     return JSONResponse(content={"latex": generic_latex})
