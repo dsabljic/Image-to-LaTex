@@ -35,7 +35,6 @@ canvas.addEventListener("mouseout", () => isDrawing = false);
 clearButton.addEventListener("click", () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     initCanvas();
-    predictionDiv.textContent = "Prediction will appear here";
 });
 
 predictButton.addEventListener("click", function() {
