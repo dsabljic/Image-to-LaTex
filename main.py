@@ -8,7 +8,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
 async def read_index():
-    return FileResponse('template/index.html')
+    return FileResponse('templates/index.html')
 
 # demo
 @app.post("/predict")
