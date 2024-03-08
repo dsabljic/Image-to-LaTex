@@ -60,7 +60,8 @@ print(response.json())
 
 response = response.json()
 
-try:
+def get_latex():
+  try:
     latex_code = response['choices'][0]['message']['content']
 
     # Strip the markdown code
@@ -69,13 +70,5 @@ try:
 
     print(latex_code)
 
-except (KeyError, IndexError, TypeError):
+  except (KeyError, IndexError, TypeError):
     print("The response did not contain LaTeX code in the expected format.")
-
-filename = 'response.json'
-
-with open(filename, 'w') as file:
-    json.dump(response, file, indent=4)
-
-def get_latex():
-  pass
