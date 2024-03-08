@@ -2,6 +2,8 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
+import converter
+
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -15,5 +17,5 @@ async def read_index():
 async def predict_formula(image: UploadFile = File(...)):
     # Image processing
     
-    generic_latex = "E=mc^2"
+    generic_latex = converter.get_latex(img_path)
     return JSONResponse(content={"latex": generic_latex})
