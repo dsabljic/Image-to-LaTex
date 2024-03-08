@@ -12,9 +12,6 @@ if api_key is None:
     print("API key not found. Please check your .env file.")
 else:
     print(f"API key loaded successfully. {api_key}")
-# OpenAI API Key
-# api_key = os.getenv("OPENAI_API_KEY")
-# api_key = "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"
 
 # Function to encode the image
 def encode_image(image_path):
