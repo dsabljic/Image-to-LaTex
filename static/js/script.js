@@ -49,7 +49,7 @@ predictButton.addEventListener("click", function() {
         })
         .then(response => response.json())
         .then(data => {
-            predictionDiv.innerHTML = `LaTeX:"<code>${data.latex}</code>`;
+            predictionDiv.innerHTML = `LaTeX: <code>${data.latex}</code>`;
         })
         .catch(error => {
             console.error('Error:', error);
