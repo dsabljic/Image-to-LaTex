@@ -17,6 +17,7 @@ def get_latex_from_image(base64_image):
     Returns:
     str: The extracted LaTeX code from the response.
     """
+
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {api_key}"
@@ -56,14 +57,13 @@ def get_latex_from_image(base64_image):
         print("The response did not contain LaTeX code in the expected format.")
         return None
 
-# Function to encode the image
-def encode_image(image_path):
-  with open(image_path, "rb") as image_file:
-    return base64.b64encode(image_file.read()).decode('utf-8')
+# def encode_image(image_path):
+#   with open(image_path, "rb") as image_file:
+#     return base64.b64encode(image_file.read()).decode('utf-8')
 
-# Demo
-if __name__ == "__main__":
-    image_path = "./formula.png"
-    base64_image = encode_image(image_path)
-    latex_code = get_latex_from_image(base64_image)
-    print(latex_code)
+## Demo
+# if __name__ == "__main__":
+#     image_path = "./formula.png"
+#     base64_image = encode_image(image_path)
+#     latex_code = get_latex_from_image(base64_image)
+#     print(latex_code)
