@@ -51,7 +51,6 @@ predictButton.addEventListener("click", function() {
     .then(response => response.json())
     .then(data => {
         predictionDiv.innerHTML = `LaTeX: <code>${data.latex}</code>`;
-        copyButton.classList.remove('hidden');
     })
     .catch(error => {
         console.error('Error:', error);
