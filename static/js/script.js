@@ -39,21 +39,22 @@ clearButton.addEventListener("click", () => {
 });
 
 predictButton.addEventListener("click", function() {
-    canvas.toBlob(blob => {
-        const formData = new FormData();
-        formData.append("image", blob);
+    const image = canvas.toDataURL();
 
-        fetch("/predict", {
-            method: "POST",
-            body: formData,
-        })
-        .then(response => response.json())
-        .then(data => {
-            predictionDiv.innerHTML = `LaTeX: <code>${data.latex}</code>`;
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred while predicting the formula');
-        });
+    fetch("/predict", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ image: image })
+    })
+    .then(response => response.json())
+    .then(data => {
+        predictionDiv.innerHTML = `LaTeX: <code>${data.latex}</code>`;
+        copyButton.classList.remove('hidden');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while predicting the formula');
     });
 });
