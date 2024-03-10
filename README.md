@@ -25,7 +25,7 @@ echo OPENAI_API_KEY=your_key_here > .env
 python3 -m venv env
 ```
 
-### Activate the envoronment
+### Activate the environment
 
 ```sh
 source env/bin/activate
