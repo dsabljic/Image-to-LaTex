@@ -14,29 +14,29 @@ git clone [URL to your repository]
 cd Image-to-LaTex
 ```
 
-**Set up the .env file**
+### Set up the .env file
 
 ```sh
 echo OPENAI_API_KEY=your_key_here > .env
 ```
 
-**Create virtual environment**
+### Create virtual environment
 ```sh
 python3 -m venv env
 ```
 
-**Activate the envoronment**
+### Activate the envoronment
 
 ```sh
 source env/bin/activate
 ```
 
-**Install dependencies**
+### Install dependencies
 ```sh
 pip3 -r install requirements.txt
 ```
 
-**Run the app**
+### Run the app
 
 ```sh
 uvicorn main:app --reload
