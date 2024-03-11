@@ -7,7 +7,7 @@
 ## Local setup
 
 ```sh
-git clone [URL to your repository]
+git clone https://github.com/dsabljic/Image-to-LaTex.git
 ```
 
 ```sh
