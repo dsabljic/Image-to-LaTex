@@ -33,7 +33,7 @@ source env/bin/activate
 
 ### Install dependencies
 ```sh
-pip3 -r install requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ### Run the app
