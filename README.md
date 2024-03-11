@@ -44,7 +44,9 @@ uvicorn main:app --reload
 
 ### // TODO
 - [x] Handwritten formula -> LaTex
-- [ ] Erease option
+- [ ] Erase option (FE)
 - [ ] Image/Screenshot -> LaTex
 - [ ] Copy the output to clipboard
-- [ ] Visual improvements
+- [ ] Visual improvements (FE)
+
+FE - front end (not important)
