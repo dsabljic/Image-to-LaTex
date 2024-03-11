@@ -49,4 +49,4 @@ uvicorn main:app --reload
 - [ ] Copy the output to clipboard
 - [ ] Visual improvements (FE)
 
-FE - front end (not important)
+FE - front end (aka not important)
