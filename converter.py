@@ -31,7 +31,7 @@ def get_latex_from_image(base64_image):
                 "content": [
                     {
                         "type": "text",
-                        "text": "Imagine you are a LaTeX expert with the ability to accurately transcribe images of handwritten mathematical formulas into LaTeX code. Your task is to analyze an image of a handwritten math formula and provide the corresponding LaTeX code. Please provide only the LaTeX code in your response."
+                        "text": "Imagine you are a LaTeX expert with the ability to accurately transcribe images of handwritten mathematical formulas into LaTeX code. Your task is to analyze an image of a handwritten math formula and provide the corresponding LaTeX code. Please provide only the LaTeX code in your response. If the user hasn't provided any input just return 'Please provide a handwritten formula or upload an image of the formula.'"
                     },
                     {
                         "type": "image_url",
