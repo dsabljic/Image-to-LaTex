@@ -11,15 +11,14 @@
     <p class="text-2xl mb-4 text-center m-3">Handwritten Formula</p>
     <div class="text-center">
         <canvas class="border border-black mx-auto" id="inputCanvas" width="700" height="260"></canvas>
+        <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded m-2" id="predictBtn">Convert</button>
+        <button class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded m-2" id="clearBtn">Clear</button>
         <br>
         <div class="text-center mt-8">
-            <p class="text-2xl mb-4">Or</p>
-            <p class="text-2xl mb-4">Upload LaTeX Formula Image</p>
+            <p class="text-2xl mb-4">Or upload an image</p>
             <input type="file" id="fileInput" class="border-2 border-gray-500 py-2 px-4 rounded mb-4" accept="image/*">
-            <button id="uploadBtn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded m-2">Upload</button>
+            <button id="uploadBtn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded m-2">Upload and convert</button>
         </div>
-        <button class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded m-2" id="predictBtn">Convert</button>
-        <button class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded m-2" id="clearBtn">Clear</button>
         <div id="prediction" class="mt-4 text-lg"></div>
     </div>
     <script src="../static/js/script.js"></script>
