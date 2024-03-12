@@ -38,6 +38,7 @@ clearButton.addEventListener("click", () => {
    ctx.clearRect(0, 0, canvas.width, canvas.height);
     predictionDiv.textContent = '';
     initCanvas();
+    fileInput.value = ''
 });
 
 predictButton.addEventListener("click", function() {
