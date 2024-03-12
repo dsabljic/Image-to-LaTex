@@ -23,8 +23,3 @@ async def predict_formula(data: ImageData):
         return {"latex": latex_code}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.post("/upload_predict")
-async def predict_formula(data: ImageData):
-    pass
