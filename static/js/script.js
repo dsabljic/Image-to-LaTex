@@ -3,6 +3,8 @@ const ctx = canvas.getContext("2d");
 const predictButton = document.getElementById("predictBtn");
 const clearButton = document.getElementById("clearBtn");
 const predictionDiv = document.getElementById("prediction");
+const fileInput = document.getElementById("fileInput");
+const uploadButton = document.getElementById("uploadBtn");
 
 function initCanvas() {
     ctx.fillStyle = "white";
@@ -56,4 +58,51 @@ predictButton.addEventListener("click", function() {
         console.error('Error:', error);
         alert('An error occurred while predicting the formula');
     });
+});
+
+uploadButton.addEventListener("click", function() {
+    if (fileInput.files.length === 0) {
+        alert('Please select a file to upload.');
+        predictionDiv.innerHTML = 'LaTeX: Please provide a handwritten formula or upload an image of the formula.';
+        return;
+    }
+
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+    reader.onloadend = function() {
+        const base64Image = reader.result.split(',')[1];
+        fetch("/predict", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ image: reader.result })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if(data.latex) {
+                predictionDiv.innerHTML = `LaTeX: <code>${data.latex}</code>`;
+            } else {
+                predictionDiv.textContent = 'Could not convert the formula.';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while predicting the formula');
+        });
+    };
+    reader.onerror = function(error) {
+        console.error('Error:', error);
+        alert('Error reading file');
+    };
+    reader.readAsDataURL(file);
+});
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
 });
