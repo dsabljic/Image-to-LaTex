@@ -41,10 +41,3 @@ pip3 install -r requirements.txt
 ```sh
 uvicorn main:app --reload
 ```
-
-### // TODO
-- [x] Handwritten formula -> LaTex
-- [x] Image/Screenshot -> LaTex
-- [ ] Copy to clipboard
-- [ ] Visual improvements (FE)
-- [ ] Erase option (FE)
